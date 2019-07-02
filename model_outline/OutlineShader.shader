@@ -1,10 +1,4 @@
-﻿//
-// created by jiadong chen
-// http://www.chenjd.me
-//
-
-
-Shader "chenjd/OutlineShader"
+﻿Shader "chenjd/OutlineShader"
 {
 	Properties
 	{
@@ -68,24 +62,17 @@ Shader "chenjd/OutlineShader"
 			#pragma fragment frag
 			#include "UnityCG.cginc"
 
-
-
 			float _OutlineFactor;
 			fixed4 _OutlineColor;
 
 			float4 vert(appdata_base v) : SV_POSITION
 			{
-
 				float4 pos = UnityObjectToClipPos(v.vertex);
-
 				float3 normal = mul((float3x3) UNITY_MATRIX_MVP, v.normal);
-
 				pos.xy += _OutlineFactor * normal.xy;
 
 				return pos;
-
 			}
-
 
 			fixed4 frag() : SV_Target {
 				return _OutlineColor;
@@ -93,7 +80,5 @@ Shader "chenjd/OutlineShader"
 
 			ENDCG
 		}
-
-
 	}
 }

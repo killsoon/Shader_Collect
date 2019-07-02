@@ -1,2 +1,4 @@
 # Shader_Collect
-some useful shader
+在平时的学习过程中收集的一些有用的shader
+
+- outline描边
