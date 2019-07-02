@@ -6,3 +6,4 @@
 - 物体被遮挡之后边缘特效（SeeThroughWall）
 - 雷达扫描（ScannerEffect）
 - [物体外发光（ObjectOutline）](https://willweissman.wordpress.com/tutorials/shaders/unity-shaderlab-object-outlines/)
+- 能量罩（ForceFiled）
