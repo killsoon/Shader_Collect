@@ -43,7 +43,14 @@ Shader "CookbookShaders/Chapter05/LitSphere"
             TANGENT_SPACE_ROTATION; 
             o.tan1 = mul(rotation, UNITY_MATRIX_IT_MV[0].xyz);
             o.tan2 = mul(rotation, UNITY_MATRIX_IT_MV[1].xyz);
-          
+
+            //	等价于以下的代码
+            
+            //	原书并没有给出这一步的解释，我这里补充一下。这个shader的精髓就在于它是像投影一样。全然平铺在Sphere上的。
+            // 	我们能够想象它的本质。就是在Eye Space中，依据顶点法线在X和Y轴上的投影作为UV坐标，对纹理进行採样。
+            o.tan1 = mul(rotation, mul(float3(1.0f, 0.0, 0.0f), (float3x3)UNITY_MATRIX_IT_MV));
+			o.tan2 = mul(rotation, mul(float3(0.0f, 1.0, 0.0f), (float3x3)UNITY_MATRIX_IT_MV));
+          	
         }
 
 		void surf (Input IN, inout SurfaceOutput o) 
