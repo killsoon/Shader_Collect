@@ -10,3 +10,4 @@
 - 简易阴影（王者荣耀）（SimpleShadow）
 - 发光球体光照模型（2d纹理直接映射到3d球面上）（LitSphere)
 - 简易布料shader（Cloth）
+- [体积阴影](https://github.com/killsoon/Unity-ShaderLab-source/tree/master/Assets/Shadow/ShadowVolumes)
